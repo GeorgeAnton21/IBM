@@ -21,9 +21,9 @@ table, th, td {
     </thead>
     <tbody>
     <tr th:each="club : ${clubList}">
-        <td th:text="{club.den}"/>
-        <td th:text="{club.nrjuc}"/>
-        <td th:text="{club.liga}"/>
+        <td th:text="${club.den}"/>
+        <td th:text="${club.nrjuc}"/>
+        <td th:text="${club.liga}"/>
     </tr>
     </tbody>
 </table>

@@ -1,11 +1,10 @@
 package com.club.fotbal.controller;
 
 import com.club.fotbal.model.Club;
-import com.club.fotbal.model.Jucatori;
+import com.club.fotbal.model.Jucator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import java.util.List;
@@ -14,26 +13,24 @@ import java.util.List;
 public class FotbalController {
     private Object clubList;
 
-    @GetMapping(value = "/Jucatori")
-    @ResponseBody
-    public String Jucatori(Model model) {
+    @GetMapping(value = "/jucator")
+    public String Jucator(Model model) {
 
-        List<Jucatori> jucatoriList = List.of(
-                new Jucatori("Tatarusanu", 3000, "Steaua Bucuresti", "Portar"),
-                new Jucatori("Messi", 9000, "Barcelona", "Atacant"),
-                new Jucatori("Ronaldo", 9001, "Realmadrid", "Atacant"),
-                new Jucatori("Mutu", 2000, "Otelu Galati", "Fundas"));
+        List<Jucator> jucatorList = List.of(
+                new Jucator("Tatarusanu", 3000, "Steaua Bucuresti", "Portar"),
+                new Jucator("Messi", 9000, "Barcelona", "Atacant"),
+                new Jucator("Ronaldo", 9001, "Realmadrid", "Atacant"),
+                new Jucator("Mutu", 2000, "Otelu Galati", "Fundas"));
 
-        model.addAttribute("jucatoriList", jucatoriList);
+        model.addAttribute("jucatorList", jucatorList);
 
-        return "Jucatori";
+        return "Jucator";
     }
 
-    @GetMapping(value = "/Club")
-    @ResponseBody
+    @GetMapping(value = "/club")
     public String Club(Model model) {
 
-        List<Club> ClubList = List.of(
+        List<Club> clubList = List.of(
                 new Club("Staua Bucuresti", 30, 1),
                 new Club("Barcelona", 20, 4),
                 new Club("Realmadrid", 40, 1),

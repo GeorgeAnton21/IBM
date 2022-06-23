@@ -1,12 +1,12 @@
 package com.club.fotbal.model;
 
-public class Jucatori {
+public class Jucator {
     private String nume;
     private int salariu;
     private String echipa;
     private String pozitie;
 
-    public Jucatori(String nume, int salariu, String echipa, String pozitie) {
+    public Jucator(String nume, int salariu, String echipa, String pozitie) {
         this.nume = nume;
         this.salariu = salariu;
         this.echipa = echipa;

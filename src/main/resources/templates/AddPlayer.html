@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Players to the list</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container p-3">
+    <div class="card">
+        <div class="card-body bg-light">
+            <div class="card-header">
+                Add Players to the list
+            </div>
+            <div>
+                <form action="">
+                    <label for="Name" class="form-label">Name of the player:</label>
+                    <input
+                            type="name"
+                            id="name"
+                            placeholder="Name of the player"
+                            class="form-control"
+                    />
+                    <div class="row">
+                        <div class="col">
+                            <label for="Salary" class="form-label">Salary of the player:</label>
+                            <input
+                                    type="salary"
+                                    id="salary"
+                                    placeholder="Salary of the player"
+                                    class="form-control"
+                            />
+                        </div>
+                        <div class="col">
+                            <label for="Team" class="form-label">The team he plays:</label>
+                            <input
+                                    type="team"
+                                    id="team"
+                                    placeholder="The team he plays"
+                                    class="form-control"
+                            />
+                        </div>
+                        <div class="col">
+                            <label for="Pozition" class="form-label">The pozition he plays:</label>
+                            <input
+                                    type="pozition"
+                                    id="pozition"
+                                    placeholder="The pozition he plays"
+                                    class="form-control"
+                            />
+                    </div>
+                    <div class="p-3">
+                        <button type="button" class="btn btn-primary bg-blue">Submit</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
+</script>
+</body>
+</html>

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<h2>List of top players</h2>
 <head>
     <meta charset="UTF-8">
-    <title>List of top players</title>
+    <title>Players list</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
 </head>
+<div th:insert="fragments/Navbar :: Navbar"></div>
+<h1>Players:</h1>
 <body>
-<table style="width:100%">
-    <thead>
-    <tr>
+<div class="container p-3">
+    <div class="card">
+        <div class="card-body bg-light">
+            <div class="card-header">
+                List of top players
+            </div>
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
         <td>Name Player</td>
         <td>Salary</td>
         <td>Team</td>
@@ -28,6 +31,9 @@ table, th, td {
         <td th:text="${player.pozition}"/>
     </tr>
     </tbody>
-</table>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

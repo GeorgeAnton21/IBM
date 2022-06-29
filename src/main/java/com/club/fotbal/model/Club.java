@@ -1,38 +1,38 @@
 package com.club.fotbal.model;
 
 public class Club {
-    private String den;
-    private int nrjuc;
-    private int liga;
+    private String name;
+    private int players;
+    private int league;
 
-    public Club(String den, int nrjuc,int liga ) {
-        this.den = den;
-        this.nrjuc = nrjuc;
-        this.liga = liga;
+    public Club(String name, int players,int league ) {
+        this.name = name;
+        this.players = players;
+        this.league = league;
     }
 
 
-    public String getDen() {
-        return den;
+    public String getName() {
+        return name;
     }
 
-    public void setNume(String den) {
-        this.den = den;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getNrjuc() {
-        return nrjuc;
+    public int getPlayers() {
+        return players;
     }
 
-    public void setNrjuc(int nrjuc) {
-        this.nrjuc = nrjuc;
+    public void setPlayers(int players) {
+        this.players = players;
     }
 
-    public int getLiga() {
-        return liga;
+    public int getLeague() {
+        return league;
     }
 
-    public void setLiga(int liga) {
-        this.liga = liga;
+    public void setLeague(int league) {
+        this.league = league;
     }
 }

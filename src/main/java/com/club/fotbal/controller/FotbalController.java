@@ -1,7 +1,7 @@
 package com.club.fotbal.controller;
 
 import com.club.fotbal.model.Club;
-import com.club.fotbal.model.Jucator;
+import com.club.fotbal.model.Player;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +13,21 @@ import java.util.List;
 public class FotbalController {
     private Object clubList;
 
-    @GetMapping(value = "/jucator")
-    public String Jucator(Model model) {
+    @GetMapping(value = "/Player")
+    public String Player(Model model) {
 
-        List<Jucator> jucatorList = List.of(
-                new Jucator("Tatarusanu", 3000, "Steaua Bucuresti", "Portar"),
-                new Jucator("Messi", 9000, "Barcelona", "Atacant"),
-                new Jucator("Ronaldo", 9001, "Realmadrid", "Atacant"),
-                new Jucator("Mutu", 2000, "Otelu Galati", "Fundas"));
+        List<Player> playerList = List.of(
+                new Player("Tatarusanu", 3000, "Steaua Bucuresti", "Portar"),
+                new Player("Messi", 9000, "Barcelona", "Atacant"),
+                new Player("Ronaldo", 9001, "Realmadrid", "Atacant"),
+                new Player("Mutu", 2000, "Otelu Galati", "Fundas"));
 
-        model.addAttribute("jucatorList", jucatorList);
+        model.addAttribute("playerList", playerList);
 
-        return "Jucator";
+        return "Player";
     }
 
-    @GetMapping(value = "/club")
+    @GetMapping(value = "/Club")
     public String Club(Model model) {
 
         List<Club> clubList = List.of(

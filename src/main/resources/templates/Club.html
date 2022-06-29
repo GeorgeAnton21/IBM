@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<h2>Lista Cluburi de TOP</h2>
 <head>
     <meta charset="UTF-8">
-    <title>Lista Cluburi de TOP</title>
+    <title>Clubs list</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
 </head>
+<h1>Clubs:</h1>
 <body>
-<table style="width:100%">
-    <thead>
-    <tr>
-        <td> |Den| </td>
-        <td> |NrJuc| </td>
-        <td> |Liga| </td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="club : ${clubList}">
-        <td th:text="${club.den}"/>
-        <td th:text="${club.nrjuc}"/>
-        <td th:text="${club.liga}"/>
-    </tr>
-    </tbody>
-</table>
+<div class="container p-3">
+    <div class="card">
+        <div class="card-body bg-light">
+            <div class="card-header">
+                Top Clubs List
+            </div>
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Players</td>
+                    <td>League</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="club : ${clubList}">
+                    <td th:text="${club.name}"/>
+                    <td th:text="${club.players}"/>
+                    <td th:text="${club.league}"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

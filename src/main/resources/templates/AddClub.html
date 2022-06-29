@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Clubs to the list</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container p-3">
+  <div class="card">
+    <div class="card-body bg-light">
+      <div class="card-header">
+        Add Clubs to the list
+      </div>
+      <div>
+        <form action="">
+          <label for="Name" class="form-label">Name of the club:</label>
+          <input
+                  type="name"
+                  id="name"
+                  placeholder="Name of the club"
+                  class="form-control"
+          />
+          <div class="row">
+            <div class="col">
+              <label for="Players" class="form-label">Number of players in the team:</label>
+              <input
+                      type="players"
+                      id="players"
+                      placeholder="Number of players"
+                      class="form-control"
+              />
+            </div>
+            <div class="col">
+              <label for="League" class="form-label">The league in which he plays:</label>
+              <input
+                      type="league"
+                      id="league"
+                      placeholder="The league in which he plays"
+                      class="form-control"
+              />
+            </div>
+          </div>
+          <div class="p-3">
+            <button type="button" class="btn btn-primary bg-blue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
+</script>
+</body>
+</html>

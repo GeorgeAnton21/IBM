@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<h2>List of top players</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>List of top players</title>
+</head>
+<body>
+<table style="width:100%">
+    <thead>
+    <tr>
+        <td>Name Player</td>
+        <td>Salary</td>
+        <td>Team</td>
+        <td>Pozition</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player : ${playerList}">
+        <td th:text="${player.namep}"/>
+        <td th:text="${player.salary}"/>
+        <td th:text="${player.team}"/>
+        <td th:text="${player.pozition}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

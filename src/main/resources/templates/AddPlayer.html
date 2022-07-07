@@ -14,10 +14,10 @@
                 Add Players to the list
             </div>
             <div>
-                <form action="">
+                <form th:action ="@{/submitPlayer}" th:object="${player}" method="post">
                     <label for="Name" class="form-label">Name of the player:</label>
                     <input
-                            type="name"
+                            type="name" th:field="${player.namep}"
                             id="name"
                             placeholder="Name of the player"
                             class="form-control"
@@ -26,7 +26,7 @@
                         <div class="col">
                             <label for="Salary" class="form-label">Salary of the player:</label>
                             <input
-                                    type="salary"
+                                    type="salary" th:field="${player.salary}"
                                     id="salary"
                                     placeholder="Salary of the player"
                                     class="form-control"
@@ -35,7 +35,7 @@
                         <div class="col">
                             <label for="Team" class="form-label">The team he plays:</label>
                             <input
-                                    type="team"
+                                    type="team"th:field="${player.team}"
                                     id="team"
                                     placeholder="The team he plays"
                                     class="form-control"
@@ -44,7 +44,7 @@
                         <div class="col">
                             <label for="Pozition" class="form-label">The pozition he plays:</label>
                             <input
-                                    type="pozition"
+                                    type="pozition" th:field="${player.pozition}"
                                     id="pozition"
                                     placeholder="The pozition he plays"
                                     class="form-control"
@@ -52,7 +52,6 @@
                     </div>
                         <div class="form-group rom">
                             <button type="submit" class="btn btn-primary bg-red"/>Save</div>
-                    </div>
                     </div>
                 </form>
             </div>

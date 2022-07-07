@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 
 public class AddPlayerController {
-    @GetMapping(value="AddPlayer") //acceseaza pagina
-    public String Player(Model model){
-        Player AddPlayer = Player.builder().build();
-        model.addAttribute("Player", AddPlayer);
+    @GetMapping(value="/AddPlayer") //acceseaza pagina
+    public String AddPlayer(Model model){
+        Player myPlayer = Player.builder().build().builder().build();
+        model.addAttribute("player", myPlayer);
         return "AddPlayer";
     }
 
-    @PostMapping(value="/AddPlayer")
-    public String AddPlayer(@ModelAttribute Player Player){
-
-        return "AddPlayer";
+    @PostMapping(value="/submitPlayer")
+    public String submitPlayer(@ModelAttribute Player player){
+        System.out.println(player.toString());
+        saveToDataBase(player);
+        return "Player";
     }
 
-    private void saveToDataBase(Player player) {
-        //1000 save to database
+    private void saveToDataBase(Player player){
     }
 }

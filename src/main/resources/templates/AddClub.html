@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title>Add Clubs to the list</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Add Clubs to the list</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
 </head>
 <div th:insert="fragments/Navbar :: Navbar"></div>
 <body>
 <div class="container p-3">
-  <div class="card">
-    <div class="card-body bg-light">
-      <div class="card-header">
-        Add Clubs to the list
-      </div>
-      <div>
-        <form action="">
-          <label for="Name" class="form-label">Name of the club:</label>
-          <input
-                  type="name"
-                  id="name"
-                  placeholder="Name of the club"
-                  class="form-control"
-          />
-          <div class="row">
-            <div class="col">
-              <label for="Players" class="form-label">Number of players in the team:</label>
-              <input
-                      type="players"
-                      id="players"
-                      placeholder="Number of players"
-                      class="form-control"
-              />
+    <div class="card">
+        <div class="card-body bg-light">
+            <div class="card-header">
+                Add Clubs to the list
             </div>
-            <div class="col">
-              <label for="League" class="form-label">The league in which he plays:</label>
-              <input
-                      type="league"
-                      id="league"
-                      placeholder="The league in which he plays"
-                      class="form-control"
-              />
+            <div>
+                <form th:action ="@{/submitClub}" th:object="${club}" method="post">
+                    <label for="Name" class="form-label">Name of the club:</label>
+                    <input
+                            type="name" th:field="${club.name}"
+                            id="name"
+                            placeholder="Name of the club"
+                            class="form-control"
+                    />
+                    <div class="row">
+                        <div class="col">
+                            <label for="Players" class="form-label">Number of players in the team:</label>
+                            <input
+                                    type="players" th:field="${club.players}"
+                                    id="players"
+                                    placeholder="Number of players"
+                                    class="form-control"
+                            />
+                        </div>
+                        <div class="col">
+                            <label for="League" class="form-label">The league in which he plays:</label>
+                            <input
+                                    type="league" th:field="${club.league}"
+                                    id="league"
+                                    placeholder="The league in which he plays"
+                                    class="form-control"
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group rom">
+                        <button type="submit" class="btn btn-primary bg-red"/>
+                        Save
+                    </div>
+                </form>
             </div>
-          </div>
-            <div class="form-group rom">
-              <button type="submit" class="btn btn-primary bg-red"/>Save</div>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
 </div>
 <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
 </script>

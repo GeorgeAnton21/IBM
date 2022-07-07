@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 
 public class AddClubController {
-    @GetMapping(value="AddClub") //acceseaza pagina
-    public String Club(Model model){
-        Club AddClub = Club.builder().build();
-        model.addAttribute("Club", AddClub);
+    @GetMapping(value="/AddClub") //acceseaza pagina
+    public String AddClub(Model model){
+        Club myClub = Club.builder().build();
+        model.addAttribute("club", myClub);
         return "AddClub";
     }
 
-    @PostMapping(value="/AddClub")
-    public String AddClub(@ModelAttribute Club club){
-
-        return "AddClub";
+    @PostMapping(value="/submitClub")
+    public String submitClub(@ModelAttribute Club club){
+        System.out.println(club.toString());
+        saveToDataBase(club);
+        return "Club";
     }
 
-    private void saveToDataBase(Club club) {
+    private void saveToDataBase(Club AddClub) {
         //1000 save to database
     }
 }

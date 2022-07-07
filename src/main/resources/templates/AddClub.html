@@ -15,6 +15,13 @@
             </div>
             <div>
                 <form th:action ="@{/submitClub}" th:object="${club}" method="post">
+                    <label for="ID" class="form-label">Club ID:</label>
+                    <input
+                            type="id" th:field="${club.id}"
+                            id="id"
+                            placeholder="ID of the club"
+                            class="form-control"
+                            />
                     <label for="Name" class="form-label">Name of the club:</label>
                     <input
                             type="name" th:field="${club.name}"

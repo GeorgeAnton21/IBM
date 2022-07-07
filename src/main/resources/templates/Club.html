@@ -17,6 +17,7 @@
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
+                    <td>ID</td>
                     <td>Name</td>
                     <td>Players</td>
                     <td>League</td>
@@ -24,6 +25,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="club : ${clubList}">
+                    <td th:text="${club.id}"/>
                     <td th:text="${club.name}"/>
                     <td th:text="${club.players}"/>
                     <td th:text="${club.league}"/>

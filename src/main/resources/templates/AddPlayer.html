@@ -15,6 +15,13 @@
             </div>
             <div>
                 <form th:action ="@{/submitPlayer}" th:object="${player}" method="post">
+                    <label for="ID" class="form-label">Player ID:</label>
+                    <input
+                            type="id" th:field="${player.id}"
+                            id="id"
+                            placeholder="ID of the player"
+                            class="form-control"
+                    />
                     <label for="Name" class="form-label">Name of the player:</label>
                     <input
                             type="name" th:field="${player.namep}"

@@ -24,7 +24,7 @@ public class AddClubController {
         return "Club";
     }
 
-    private void saveToDataBase(Club AddClub) {
+    private void saveToDataBase(Club club) {
         //1000 save to database
     }
 }

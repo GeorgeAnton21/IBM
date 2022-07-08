@@ -15,35 +15,25 @@
             </div>
             <div>
                 <form th:action ="@{/submitClub}" th:object="${club}" method="post">
-                    <label for="ID" class="form-label">Club ID:</label>
+                    <label  class="form-label">Name of the club:</label>
                     <input
-                            type="id" th:field="${club.id}"
-                            id="id"
-                            placeholder="ID of the club"
-                            class="form-control"
-                            />
-                    <label for="Name" class="form-label">Name of the club:</label>
-                    <input
-                            type="name" th:field="${club.name}"
-                            id="name"
+                            type="text" th:field="${club.name}"
                             placeholder="Name of the club"
                             class="form-control"
                     />
                     <div class="row">
                         <div class="col">
-                            <label for="Players" class="form-label">Number of players in the team:</label>
+                            <label  class="form-label">Number of players in the team:</label>
                             <input
-                                    type="players" th:field="${club.players}"
-                                    id="players"
+                                    type="text" th:field="${club.players}"
                                     placeholder="Number of players"
                                     class="form-control"
                             />
                         </div>
                         <div class="col">
-                            <label for="League" class="form-label">The league in which he plays:</label>
+                            <label  class="form-label">The league in which he plays:</label>
                             <input
-                                    type="league" th:field="${club.league}"
-                                    id="league"
+                                    type="text" th:field="${club.league}"
                                     placeholder="The league in which he plays"
                                     class="form-control"
                             />

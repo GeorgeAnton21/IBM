@@ -15,44 +15,33 @@
             </div>
             <div>
                 <form th:action ="@{/submitPlayer}" th:object="${player}" method="post">
-                    <label for="ID" class="form-label">Player ID:</label>
+                    <label class="form-label">Name of the player:</label>
                     <input
-                            type="id" th:field="${player.id}"
-                            id="id"
-                            placeholder="ID of the player"
-                            class="form-control"
-                    />
-                    <label for="Name" class="form-label">Name of the player:</label>
-                    <input
-                            type="name" th:field="${player.namep}"
-                            id="name"
+                            type="text" th:field="${player.namep}"
                             placeholder="Name of the player"
                             class="form-control"
                     />
                     <div class="row">
                         <div class="col">
-                            <label for="Salary" class="form-label">Salary of the player:</label>
+                            <label class="form-label">Salary of the player:</label>
                             <input
-                                    type="salary" th:field="${player.salary}"
-                                    id="salary"
+                                    type="text" th:field="${player.salary}"
                                     placeholder="Salary of the player"
                                     class="form-control"
                             />
                         </div>
                         <div class="col">
-                            <label for="Team" class="form-label">The team he plays:</label>
+                            <label class="form-label">The team he plays:</label>
                             <input
-                                    type="team"th:field="${player.team}"
-                                    id="team"
+                                    type="text"th:field="${player.team}"
                                     placeholder="The team he plays"
                                     class="form-control"
                             />
                         </div>
                         <div class="col">
-                            <label for="Pozition" class="form-label">The pozition he plays:</label>
+                            <label class="form-label">The pozition he plays:</label>
                             <input
-                                    type="pozition" th:field="${player.pozition}"
-                                    id="pozition"
+                                    type="ptext" th:field="${player.pozition}"
                                     placeholder="The pozition he plays"
                                     class="form-control"
                             />

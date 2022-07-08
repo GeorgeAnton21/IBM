@@ -17,7 +17,6 @@
             <table class="table table-hover table-bordered">
                 <thead>
                 <tr>
-        <td>ID</td>
         <td>Name Player</td>
         <td>Salary</td>
         <td>Team</td>
@@ -26,7 +25,6 @@
     </thead>
     <tbody>
     <tr th:each="player : ${playerList}">
-        <td th:text="${player.id}"/>
         <td th:text="${player.namep}"/>
         <td th:text="${player.salary}"/>
         <td th:text="${player.team}"/>

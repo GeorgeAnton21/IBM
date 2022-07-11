@@ -21,8 +21,8 @@ public class CreatePlayerController {
         Player player = Player.builder()
                 .namep("Tatarusanu")
                 .salary(15000)
-                .team("Steaua")
                 .pozition("Portar")
+                //.club("Steaua")
                 .build();
         playerRepository.save(player);
         return "OK";

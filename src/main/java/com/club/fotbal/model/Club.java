@@ -2,6 +2,7 @@ package com.club.fotbal.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @ToString
 @Setter
@@ -27,5 +28,8 @@ public class Club {
 
     @Column(name = "league")
     private int league;
+
+    @OneToMany(mappedBy = "club", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Player> playerList;
 
 }

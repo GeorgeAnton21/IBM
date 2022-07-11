@@ -19,16 +19,16 @@
                 <tr>
         <td>Name Player</td>
         <td>Salary</td>
-        <td>Team</td>
         <td>Pozition</td>
+        <td>Club</td>
     </tr>
     </thead>
     <tbody>
     <tr th:each="player : ${playerList}">
         <td th:text="${player.namep}"/>
         <td th:text="${player.salary}"/>
-        <td th:text="${player.team}"/>
         <td th:text="${player.pozition}"/>
+        <td th:text="${player.club.name}+ ' - ' +${player.club.league}"/>
     </tr>
     </tbody>
             </table>

@@ -24,10 +24,11 @@ public class Player {
     @Column(name = "salary")
     private int salary;
 
-    @Column(name = "team")
-    private String team;
-
     @Column(name = "pozition")
     private String pozition;
+
+    @ManyToOne
+    @JoinColumn(name = "id_club")
+   private Club club;
 
 }

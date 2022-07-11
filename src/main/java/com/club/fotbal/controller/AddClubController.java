@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 
 public class AddClubController {
@@ -25,13 +27,8 @@ public class AddClubController {
     }
 
     @PostMapping(value="/submitClub")
-    public String submitClub(@ModelAttribute Club club){
-        System.out.println(club.toString());
-        saveToDataBase(club);
-        return "Club";
-    }
-
-    private void saveToDataBase(Club club) {
+    public String submitClub(@ModelAttribute Club club, Model model) {
         clubRepository.save(club);
+        return "redirect:/Club";
     }
 }

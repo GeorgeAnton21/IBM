@@ -15,6 +15,9 @@
             </div>
             <div>
                 <form th:action ="@{/submitPlayer}" th:object="${player}" method="post">
+                    <div class = "row">
+                        <input type="text" class="d-none" th:field="${player.id}" >
+                    </div>
                     <label class="form-label">Name of the player:</label>
                     <input
                             type="text" th:field="${player.namep}"
@@ -33,7 +36,7 @@
                         <div class="col">
                             <label class="form-label">The pozition he plays:</label>
                             <input
-                                    type="ptext" th:field="${player.pozition}"
+                                    type="text" th:field="${player.pozition}"
                                     placeholder="The pozition he plays"
                                     class="form-control"
                             />
@@ -42,8 +45,6 @@
                             <label class="form-label">The club he plays:</label>
                             <select th:field = "${player.club.id}">
                                 <option th:each="club : ${clubList}" th:value="${club.id}" th:text="${club.name}"></option>
-                                    placeholder="The club he plays"
-                                    class="form-control"
                                 </select>
                         </div>
                         <div class="form-group rom">

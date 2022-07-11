@@ -21,6 +21,7 @@
         <td>Salary</td>
         <td>Pozition</td>
         <td>Club</td>
+        <td>Action</td>
     </tr>
     </thead>
     <tbody>
@@ -29,6 +30,19 @@
         <td th:text="${player.salary}"/>
         <td th:text="${player.pozition}"/>
         <td th:text="${player.club.name}+ ' - ' +${player.club.league}"/>
+        <td>
+            <form th:action="@{/editPlayer}", th:object="${player}" method="post">
+                <input class="d-none" name ="playerId" th:value ="${player.id}">
+            <button class="btn">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/deletePlayer}", th:object="${player}" method="post">
+                <input class="d-none" name ="playerId" th:value ="${player.id}">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </td>
+
     </tr>
     </tbody>
             </table>

@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 
@@ -38,6 +40,23 @@ public class AddPlayerController {
     @PostMapping(value="/submitPlayer")
     public String submitPlayer(@ModelAttribute Player player, Model model){
         playerRepository.save(player);
+        return "redirect:/Player";
+    }
+
+    @PostMapping(value= "/editPlayer")
+    public String editPlayer(@RequestParam("playerId") int id, Model model){
+     Player player = playerRepository.findById(id).get();
+
+        model.addAttribute("player", player );
+
+        List<Club> clubList = clubRepository.findAll();
+        model.addAttribute("clubList", clubList);
+        return "AddPlayer";
+    }
+
+    @PostMapping(value = "/deletePlayer")
+    public String deletePlayer(@RequestParam("playerId") int id){
+        playerRepository.deleteById(id);
         return "redirect:/Player";
     }
 }
